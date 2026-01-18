@@ -1,0 +1,9 @@
+{
+  "task": {
+    "parseImplementationPlan": "{{specId}}의 implementation_plan.json 파싱 실패: {{error}}",
+    "jsonError": {
+      "titleSuffix": "(JSON 오류)",
+      "description": "⚠️ JSON 파싱 오류: {{error}}\n\nimplementation_plan.json 파일이 잘못되었습니다. 백엔드 자동 수정을 실행하거나 파일을 수동으로 수정하세요."
+    }
+  }
+}

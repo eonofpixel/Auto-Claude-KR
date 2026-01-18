@@ -1,0 +1,109 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+// Import English translation resources
+import enCommon from './locales/en/common.json';
+import enNavigation from './locales/en/navigation.json';
+import enSettings from './locales/en/settings.json';
+import enTasks from './locales/en/tasks.json';
+import enWelcome from './locales/en/welcome.json';
+import enOnboarding from './locales/en/onboarding.json';
+import enDialogs from './locales/en/dialogs.json';
+import enGitlab from './locales/en/gitlab.json';
+import enTaskReview from './locales/en/taskReview.json';
+import enTerminal from './locales/en/terminal.json';
+import enErrors from './locales/en/errors.json';
+import enAgentMessages from './locales/en/agentMessages.json';
+
+// Import French translation resources
+import frCommon from './locales/fr/common.json';
+import frNavigation from './locales/fr/navigation.json';
+import frSettings from './locales/fr/settings.json';
+import frTasks from './locales/fr/tasks.json';
+import frWelcome from './locales/fr/welcome.json';
+import frOnboarding from './locales/fr/onboarding.json';
+import frDialogs from './locales/fr/dialogs.json';
+import frGitlab from './locales/fr/gitlab.json';
+import frTaskReview from './locales/fr/taskReview.json';
+import frTerminal from './locales/fr/terminal.json';
+import frErrors from './locales/fr/errors.json';
+import frAgentMessages from './locales/fr/agentMessages.json';
+
+// Import Korean translation resources
+import koCommon from './locales/ko/common.json';
+import koNavigation from './locales/ko/navigation.json';
+import koSettings from './locales/ko/settings.json';
+import koTasks from './locales/ko/tasks.json';
+import koWelcome from './locales/ko/welcome.json';
+import koOnboarding from './locales/ko/onboarding.json';
+import koDialogs from './locales/ko/dialogs.json';
+import koGitlab from './locales/ko/gitlab.json';
+import koTaskReview from './locales/ko/taskReview.json';
+import koTerminal from './locales/ko/terminal.json';
+import koErrors from './locales/ko/errors.json';
+import koAgentMessages from './locales/ko/agentMessages.json';
+
+export const defaultNS = 'common';
+
+export const resources = {
+  en: {
+    common: enCommon,
+    navigation: enNavigation,
+    settings: enSettings,
+    tasks: enTasks,
+    welcome: enWelcome,
+    onboarding: enOnboarding,
+    dialogs: enDialogs,
+    gitlab: enGitlab,
+    taskReview: enTaskReview,
+    terminal: enTerminal,
+    errors: enErrors,
+    agentMessages: enAgentMessages
+  },
+  fr: {
+    common: frCommon,
+    navigation: frNavigation,
+    settings: frSettings,
+    tasks: frTasks,
+    welcome: frWelcome,
+    onboarding: frOnboarding,
+    dialogs: frDialogs,
+    gitlab: frGitlab,
+    taskReview: frTaskReview,
+    terminal: frTerminal,
+    errors: frErrors,
+    agentMessages: frAgentMessages
+  },
+  ko: {
+    common: koCommon,
+    navigation: koNavigation,
+    settings: koSettings,
+    tasks: koTasks,
+    welcome: koWelcome,
+    onboarding: koOnboarding,
+    dialogs: koDialogs,
+    gitlab: koGitlab,
+    taskReview: koTaskReview,
+    terminal: koTerminal,
+    errors: koErrors,
+    agentMessages: koAgentMessages
+  }
+} as const;
+
+i18n
+  .use(initReactI18next)
+  .init({
+    resources,
+    lng: 'ko', // Default language (will be overridden by settings)
+    fallbackLng: 'en',
+    defaultNS,
+    ns: ['common', 'navigation', 'settings', 'tasks', 'welcome', 'onboarding', 'dialogs', 'gitlab', 'taskReview', 'terminal', 'errors', 'agentMessages'],
+    interpolation: {
+      escapeValue: false // React already escapes values
+    },
+    react: {
+      useSuspense: false // Disable suspense for Electron compatibility
+    }
+  });
+
+export default i18n;

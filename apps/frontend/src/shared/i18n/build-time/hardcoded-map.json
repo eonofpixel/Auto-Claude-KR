@@ -1,0 +1,87 @@
+{
+  "$schema": "./hardcoded-map.schema.json",
+  "$comment": "Build-time text substitution map for main process files. Original English text → i18n key mapping.",
+  "version": "1.0.0",
+  "mappings": [
+    {
+      "original": "Discovering project context...",
+      "key": "agentMessages.discoveringContext",
+      "file": "agent-events.ts"
+    },
+    {
+      "original": "Gathering requirements...",
+      "key": "agentMessages.gatheringRequirements",
+      "file": "agent-events.ts"
+    },
+    {
+      "original": "Writing specification...",
+      "key": "agentMessages.writingSpec",
+      "file": "agent-events.ts"
+    },
+    {
+      "original": "Validating specification...",
+      "key": "agentMessages.validatingSpec",
+      "file": "agent-events.ts"
+    },
+    {
+      "original": "Specification complete",
+      "key": "agentMessages.specComplete",
+      "file": "agent-events.ts"
+    },
+    {
+      "original": "Creating implementation plan...",
+      "key": "agentMessages.creatingPlan",
+      "file": "agent-events.ts"
+    },
+    {
+      "original": "Implementing code changes...",
+      "key": "agentMessages.implementingChanges",
+      "file": "agent-events.ts"
+    },
+    {
+      "original": "Running QA review...",
+      "key": "agentMessages.runningQAReview",
+      "file": "agent-events.ts"
+    },
+    {
+      "original": "Fixing QA issues...",
+      "key": "agentMessages.fixingQAIssues",
+      "file": "agent-events.ts"
+    },
+    {
+      "original": "Build paused - subtasks still pending",
+      "key": "agentMessages.buildPaused",
+      "file": "agent-events.ts"
+    },
+    {
+      "original": "Starting spec creation...",
+      "key": "agentMessages.startingSpecCreation",
+      "file": "agent-process.ts"
+    },
+    {
+      "original": "Starting build process...",
+      "key": "agentMessages.startingBuildProcess",
+      "file": "agent-process.ts"
+    }
+  ],
+  "templates": [
+    {
+      "pattern": "Working on subtask ${subtaskMatch[1]}...",
+      "key": "agentMessages.workingOnSubtask",
+      "interpolation": { "subtask": "subtaskMatch[1]" },
+      "file": "agent-events.ts"
+    },
+    {
+      "pattern": "Subtask ${completedSubtask?.[1] || ''} completed",
+      "key": "agentMessages.subtaskCompleted",
+      "interpolation": { "subtask": "completedSubtask?.[1] || ''" },
+      "file": "agent-events.ts"
+    },
+    {
+      "pattern": "Process exited with code ${code}",
+      "key": "agentMessages.processExited",
+      "interpolation": { "code": "code" },
+      "file": "agent-process.ts"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "discoveringContext": "Discovering project context...",
+  "gatheringRequirements": "Gathering requirements...",
+  "writingSpec": "Writing specification...",
+  "validatingSpec": "Validating specification...",
+  "specComplete": "Specification complete",
+  "creatingPlan": "Creating implementation plan...",
+  "implementingChanges": "Implementing code changes...",
+  "runningQAReview": "Running QA review...",
+  "fixingQAIssues": "Fixing QA issues...",
+  "buildPaused": "Build paused - subtasks still pending",
+  "startingSpecCreation": "Starting spec creation...",
+  "startingBuildProcess": "Starting build process...",
+  "workingOnSubtask": "Working on subtask {{subtask}}...",
+  "subtaskCompleted": "Subtask {{subtask}} completed",
+  "processExited": "Process exited with code {{code}}"
+}

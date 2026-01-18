@@ -1,0 +1,389 @@
+{
+  "wizard": {
+    "title": "Assistant de configuration",
+    "description": "Configurez votre environnement Auto Claude en quelques étapes simples",
+    "helpText": "Cet assistant vous aidera à configurer votre environnement en quelques étapes. Vous pouvez configurer votre token OAuth Claude, activer les fonctionnalités de mémoire et créer votre première tâche."
+  },
+  "welcome": {
+    "title": "Bienvenue sur Auto Claude",
+    "subtitle": "Construisez des logiciels de manière autonome avec des agents IA",
+    "getStarted": "Commencer",
+    "skip": "Passer la configuration",
+    "features": {
+      "aiPowered": {
+        "title": "Développement assisté par IA",
+        "description": "Générez du code et construisez des fonctionnalités avec les agents Claude Code"
+      },
+      "specDriven": {
+        "title": "Workflow basé sur les specs",
+        "description": "Définissez des tâches avec des spécifications claires et laissez Auto Claude gérer l'implémentation"
+      },
+      "memory": {
+        "title": "Mémoire & Contexte",
+        "description": "Mémoire persistante entre les sessions avec Graphiti"
+      },
+      "parallel": {
+        "title": "Exécution parallèle",
+        "description": "Exécutez plusieurs agents en parallèle pour des cycles de développement plus rapides"
+      }
+    }
+  },
+  "oauth": {
+    "title": "Authentification Claude",
+    "description": "Connectez votre compte Claude pour activer les fonctionnalités IA",
+    "configureTitle": "Configurer l'authentification Claude",
+    "addAccountsDesc": "Ajoutez vos comptes Claude pour activer les fonctionnalités IA",
+    "multiAccountInfo": "Ajoutez plusieurs abonnements Claude pour basculer automatiquement entre eux lorsque vous atteignez les limites.",
+    "noAccountsYet": "Aucun compte configuré",
+    "badges": {
+      "default": "Par défaut",
+      "active": "Actif",
+      "authenticated": "Authentifié",
+      "needsAuth": "Auth requise"
+    },
+    "buttons": {
+      "authenticate": "Authentifier",
+      "setActive": "Définir actif",
+      "rename": "Renommer",
+      "delete": "Supprimer",
+      "add": "Ajouter",
+      "adding": "Ajout...",
+      "showToken": "Afficher le jeton",
+      "hideToken": "Masquer le jeton",
+      "copyToken": "Copier le jeton",
+      "back": "Retour",
+      "continue": "Continuer",
+      "skip": "Passer"
+    },
+    "labels": {
+      "accountName": "Nom du compte",
+      "namePlaceholder": "Nom du profil (ex: Travail, Personnel)",
+      "tokenLabel": "Jeton OAuth",
+      "tokenPlaceholder": "Entrez le jeton ici",
+      "tokenHint": "Collez le jeton affiché dans votre terminal après la connexion OAuth."
+    },
+    "keychainTitle": "Stockage sécurisé",
+    "keychainDescription": "Vos jetons sont chiffrés à l'aide du trousseau de clés de votre système. Une demande de mot de passe macOS peut apparaître — cliquez sur « Toujours autoriser » pour ne plus la revoir.",
+    "toast": {
+      "authSuccess": "Profil authentifié avec succès",
+      "authSuccessWithEmail": "Compte : {{email}}",
+      "authSuccessGeneric": "Authentification terminée. Vous pouvez maintenant utiliser ce profil.",
+      "authStartFailed": "Échec du démarrage de l'authentification",
+      "addProfileFailed": "Échec de l'ajout du profil",
+      "tokenSaved": "Jeton enregistré",
+      "tokenSavedDescription": "Votre jeton a été enregistré avec succès.",
+      "tokenSaveFailed": "Échec de l'enregistrement du jeton",
+      "tryAgain": "Veuillez réessayer."
+    },
+    "errors": {
+      "profileNameRequired": "Le nom du profil doit contenir au moins une lettre ou un chiffre"
+    },
+    "manualToken": {
+      "title": "Saisie manuelle du jeton",
+      "hint": "Exécutez <code>claude setup-token</code> pour obtenir votre jeton",
+      "placeholder": "sk-ant-oat01-...",
+      "emailPlaceholder": "Email (optionnel, pour l'affichage)",
+      "cancel": "Annuler",
+      "save": "Enregistrer le jeton",
+      "hideEntry": "Masquer la saisie du jeton",
+      "showEntry": "Saisir le jeton manuellement"
+    },
+    "profile": {
+      "renameTitle": "Renommer le profil",
+      "deleteTitle": "Supprimer le profil"
+    },
+    "successMessage": "Vous avez au moins un compte Claude authentifié. Vous pouvez passer à l'étape suivante.",
+    "inputPlaceholder": "Nom du compte (ex: Travail, Personnel)"
+  },
+  "memory": {
+    "title": "Mémoire",
+    "description": "Configurer la mémoire persistante entre sessions pour les agents",
+    "contextDescription": "La mémoire Auto Claude aide à retenir le contexte entre vos sessions de code",
+    "enableMemory": "Activer la mémoire",
+    "enableMemoryDescription": "Mémoire persistante entre sessions utilisant LadybugDB (base de données intégrée)",
+    "memoryDisabledInfo": "La mémoire est désactivée. Les informations de session seront stockées uniquement dans des fichiers locaux. Activez la mémoire pour un contexte persistant entre sessions avec recherche sémantique.",
+    "enableAgentAccess": "Activer l'accès mémoire des agents",
+    "enableAgentAccessDescription": "Permettre aux agents de rechercher et d'ajouter au graphe de connaissances via MCP",
+    "mcpServerUrl": "URL du serveur Graphiti MCP",
+    "mcpServerUrlDescription": "URL du serveur Graphiti MCP pour l'accès mémoire des agents",
+    "embeddingProvider": "Fournisseur d'embeddings",
+    "embeddingProviderDescription": "Fournisseur pour la recherche sémantique (optionnel - la recherche par mots-clés fonctionne sans)",
+    "selectEmbeddingModel": "Sélectionner le modèle d'embedding",
+    "openaiApiKey": "Clé API OpenAI",
+    "openaiApiKeyDescription": "Requise pour les embeddings OpenAI",
+    "openaiGetKey": "Obtenez votre clé sur",
+    "openaiApiKeyPlaceholder": "sk-...",
+    "voyageApiKey": "Clé API Voyage AI",
+    "voyageApiKeyDescription": "Requise pour les embeddings Voyage AI",
+    "googleApiKey": "Clé API Google AI",
+    "googleApiKeyDescription": "Requise pour les embeddings Google AI",
+    "azureConfig": "Configuration Azure OpenAI",
+    "azureApiKey": "Clé API",
+    "azureBaseUrl": "URL de base",
+    "azureEmbeddingDeployment": "Nom du déploiement d'embedding",
+    "anthropicApiKey": "Clé API Anthropic",
+    "anthropicApiKeyPlaceholder": "sk-ant-...",
+    "memoryInfo": "La mémoire stocke les découvertes, motifs et informations sur votre codebase pour que les futures sessions démarrent avec le contexte déjà chargé. Pas de Docker requis - utilise une base de données intégrée.",
+    "learnMore": "En savoir plus sur la mémoire",
+    "back": "Retour",
+    "skip": "Passer",
+    "saving": "Enregistrement...",
+    "saveAndContinue": "Enregistrer et continuer",
+    "providers": {
+      "ollama": "Ollama (Local - Gratuit)",
+      "openai": "OpenAI",
+      "voyage": "Voyage AI",
+      "google": "Google AI",
+      "azure": "Azure OpenAI"
+    }
+  },
+  "completion": {
+    "title": "Vous êtes prêt !",
+    "subtitle": "Auto Claude est prêt à vous aider à construire des logiciels incroyables",
+    "setupComplete": "Configuration terminée",
+    "setupCompleteDescription": "Votre environnement est configuré et prêt. Vous pouvez commencer à créer des tâches immédiatement ou explorer l'application à votre rythme.",
+    "whatsNext": "Et maintenant ?",
+    "createTask": {
+      "title": "Créer une tâche",
+      "description": "Commencez par créer votre première tâche pour voir Auto Claude en action.",
+      "action": "Ouvrir le créateur de tâches"
+    },
+    "customizeSettings": {
+      "title": "Personnaliser les paramètres",
+      "description": "Affinez vos préférences, configurez les intégrations ou relancez cet assistant.",
+      "action": "Ouvrir les paramètres"
+    },
+    "exploreDocs": {
+      "title": "Explorer la documentation",
+      "description": "En savoir plus sur les fonctionnalités avancées, les bonnes pratiques et le dépannage."
+    },
+    "finish": "Terminer et commencer à construire",
+    "rerunHint": "Vous pouvez toujours relancer cet assistant depuis Paramètres → Application"
+  },
+  "steps": {
+    "welcome": "Bienvenue",
+    "authChoice": "Méthode d'auth",
+    "auth": "Auth",
+    "claudeCode": "CLI",
+    "devtools": "Outils dev",
+    "privacy": "Confidentialité",
+    "memory": "Mémoire",
+    "done": "Terminé"
+  },
+  "privacy": {
+    "title": "Aidez à améliorer Auto Claude",
+    "subtitle": "Les rapports d'erreurs anonymes nous aident à corriger les bugs plus rapidement",
+    "whatWeCollect": {
+      "title": "Ce que nous collectons",
+      "crashReports": "Rapports de crash et traces d'erreurs",
+      "errorMessages": "Messages d'erreur (avec chemins de fichiers anonymisés)",
+      "appVersion": "Version de l'app et informations système"
+    },
+    "whatWeNeverCollect": {
+      "title": "Ce que nous ne collectons jamais",
+      "code": "Votre code ou fichiers de projet",
+      "filenames": "Chemins de fichiers complets (noms d'utilisateur masqués)",
+      "apiKeys": "Clés API ou jetons",
+      "personalData": "Informations personnelles ou données d'utilisation"
+    },
+    "toggle": {
+      "label": "Envoyer des rapports d'erreurs anonymes",
+      "description": "Aidez-nous à identifier et corriger les problèmes"
+    }
+  },
+  "claudeCode": {
+    "title": "Claude Code CLI",
+    "description": "Installez ou mettez à jour le CLI Claude Code pour activer les fonctionnalités IA",
+    "detecting": "Vérification de l'installation de Claude Code...",
+    "info": {
+      "title": "Qu'est-ce que Claude Code ?",
+      "description": "Claude Code est le CLI officiel d'Anthropic qui alimente les fonctionnalités IA d'Auto Claude. Il fournit une authentification sécurisée et un accès direct aux modèles Claude."
+    },
+    "status": {
+      "installed": "Installé",
+      "outdated": "Mise à jour disponible",
+      "notFound": "Non installé"
+    },
+    "version": {
+      "current": "Version actuelle",
+      "latest": "Dernière version"
+    },
+    "install": {
+      "button": "Installer Claude Code",
+      "updating": "Mettre à jour Claude Code",
+      "inProgress": "Installation...",
+      "success": "Commande d'installation envoyée au terminal. Veuillez terminer l'installation là-bas.",
+      "instructions": "L'installateur s'ouvrira dans votre terminal. Suivez les instructions pour terminer l'installation."
+    },
+    "learnMore": "En savoir plus sur Claude Code"
+  },
+  "devtools": {
+    "title": "Outils de développement",
+    "description": "Choisissez votre IDE et terminal préférés pour travailler avec les worktrees Auto Claude",
+    "detecting": "Détection des outils installés...",
+    "detectAgain": "Détecter à nouveau",
+    "whyConfigure": "Pourquoi configurer ceci ?",
+    "whyConfigureDescription": "Quand Auto Claude construit des fonctionnalités dans des worktrees isolés, vous pouvez les ouvrir directement dans votre IDE ou terminal préféré pour tester et réviser les changements.",
+    "ide": {
+      "label": "IDE préféré",
+      "description": "Auto Claude ouvrira les worktrees dans cet éditeur",
+      "customPath": "Chemin IDE personnalisé",
+      "selectPlaceholder": "Sélectionner un IDE...",
+      "customPathPlaceholder": "/chemin/vers/votre/ide"
+    },
+    "terminal": {
+      "label": "Terminal préféré",
+      "description": "Auto Claude ouvrira les sessions terminal ici",
+      "customPath": "Chemin terminal personnalisé",
+      "selectPlaceholder": "Sélectionner un terminal...",
+      "customPathPlaceholder": "/chemin/vers/votre/terminal"
+    },
+    "detectedSummary": "Détecté sur votre système :",
+    "noToolsDetected": "Aucun outil supplémentaire détecté (VS Code et le terminal système seront utilisés)",
+    "custom": "Personnalisé...",
+    "saveAndContinue": "Enregistrer et continuer"
+  },
+  "authChoice": {
+    "title": "Choisissez votre méthode d'authentification",
+    "description": "Sélectionnez comment vous souhaitez vous authentifier avec Claude. Vous pouvez modifier cela plus tard dans les Paramètres.",
+    "oauthOption": {
+      "title": "Se connecter avec Anthropic",
+      "description": "Utilisez votre compte Anthropic pour vous authentifier. Flux OAuth simple et sécurisé."
+    },
+    "apiKeyOption": {
+      "title": "Utiliser une clé API personnalisée",
+      "description": "Apportez votre propre clé API d'Anthropic ou d'un fournisseur API compatible. ⚠️ Très expérimental — peut engendrer des coûts importants."
+    },
+    "bothOptionsInfo": "Les deux options donnent un accès complet aux fonctionnalités de Claude Code. Choisissez selon votre préférence.",
+    "skipForNow": "Passer pour le moment"
+  },
+  "firstSpec": {
+    "title": "Créez votre première tâche",
+    "description": "Décrivez ce que vous voulez construire et laissez Auto Claude s'occuper du reste",
+    "taskCreatorOpened": {
+      "title": "Créateur de tâches ouvert",
+      "description": "Super ! Vous pouvez maintenant créer votre première tâche ou continuer avec l'assistant. Vous pouvez toujours créer des tâches plus tard depuis le tableau de bord principal."
+    },
+    "tipsTitle": "Conseils pour de bonnes tâches",
+    "tips": {
+      "beDescriptive": {
+        "title": "Soyez descriptif",
+        "description": "Décrivez clairement ce que vous voulez construire. Incluez les exigences, contraintes et comportement attendu."
+      },
+      "startSmall": {
+        "title": "Commencez petit",
+        "description": "Commencez par une tâche ciblée comme ajouter une fonctionnalité ou corriger un bug. Les petites tâches sont plus faciles à vérifier."
+      },
+      "includeContext": {
+        "title": "Incluez le contexte",
+        "description": "Mentionnez les fichiers, APIs ou patterns pertinents. Plus vous fournissez de contexte, meilleurs seront les résultats."
+      },
+      "letAiHelp": {
+        "title": "Laissez l'IA aider",
+        "description": "L'IA peut générer des titres et classifier les tâches. Concentrez-vous sur la description de ce que vous voulez, pas les détails."
+      }
+    },
+    "exampleTitle": "Exemple de description de tâche :",
+    "exampleTask": "\"Ajoutez un bouton de mode sombre à la page des paramètres. Il doit persister la préférence de l'utilisateur dans localStorage et appliquer le thème immédiatement sans rechargement de page. Utilisez les variables de couleur existantes dans styles/theme.css.\"",
+    "openTaskCreator": "Ouvrir le créateur de tâches",
+    "continueWithWizard": "Vous pouvez continuer avec l'assistant maintenant ou créer plus de tâches.",
+    "skipAndCreateLater": "Vous pouvez passer cette étape et créer des tâches plus tard depuis le tableau de bord.",
+    "back": "Retour",
+    "skip": "Passer",
+    "continue": "Continuer"
+  },
+  "graphiti": {
+    "title": "Mémoire et Contexte",
+    "description": "Activer Graphiti pour une mémoire persistante entre les sessions de codage",
+    "success": {
+      "title": "Graphiti configuré avec succès",
+      "description": "Les fonctionnalités de mémoire sont activées. Auto Claude maintiendra le contexte entre les sessions pour une meilleure compréhension du code."
+    },
+    "reconfigure": "Reconfigurer les paramètres Graphiti",
+    "dbNotice": {
+      "title": "La base de données sera créée automatiquement",
+      "description": "LadybugDB utilise une base de données intégrée - pas de Docker requis. La base de données sera créée lors de la première utilisation des fonctionnalités de mémoire."
+    },
+    "info": {
+      "title": "Qu'est-ce que Graphiti ?",
+      "description": "Graphiti est une couche mémoire intelligente qui aide Auto Claude à se souvenir du contexte entre les sessions. Il utilise un graphe de connaissances pour stocker les découvertes, modèles et informations sur votre codebase.",
+      "features": {
+        "persistent": "Mémoire persistante entre les sessions de codage",
+        "understanding": "Meilleure compréhension de votre codebase au fil du temps",
+        "reducesRepetition": "Réduit les explications répétitives",
+        "noDocker": "Pas de Docker requis - utilise une base de données intégrée"
+      },
+      "learnMore": "En savoir plus sur Graphiti"
+    },
+    "enable": {
+      "label": "Activer la mémoire Graphiti",
+      "description": "Utilise LadybugDB (intégré) et un fournisseur LLM/embedding"
+    },
+    "database": {
+      "label": "Nom de la base de données",
+      "hint": "Stocké dans ~/.auto-claude/graphs/",
+      "ready": "Prêt",
+      "issue": "Problème"
+    },
+    "providers": {
+      "llm": "Fournisseur LLM",
+      "embedding": "Fournisseur d'Embedding"
+    },
+    "apiKeys": {
+      "openai": "Clé API OpenAI",
+      "anthropic": "Clé API Anthropic",
+      "voyage": "Clé API Voyage",
+      "google": "Clé API Google",
+      "groq": "Clé API Groq",
+      "openrouter": "Clé API OpenRouter",
+      "getKeyFrom": "Obtenez votre clé sur"
+    },
+    "azure": {
+      "title": "Paramètres Azure OpenAI",
+      "apiKey": "Clé API",
+      "baseUrl": "URL de base",
+      "llmDeployment": "Nom du déploiement LLM",
+      "embeddingDeployment": "Nom du déploiement d'embedding"
+    },
+    "ollamaSettings": {
+      "title": "Paramètres Ollama (Local)",
+      "baseUrl": "URL de base",
+      "llmModel": "Modèle LLM",
+      "embeddingModel": "Modèle d'embedding",
+      "embeddingDim": "Dimension d'embedding",
+      "ensureRunning": "Assurez-vous qu'Ollama fonctionne localement. Voir"
+    },
+    "test": {
+      "button": "Tester la connexion",
+      "testing": "Test de connexion en cours...",
+      "success": "Toutes les connexions validées avec succès !",
+      "openaiNote": "Note : La validation de clé API ne supporte actuellement que OpenAI complètement. Votre clé sera enregistrée et utilisée au runtime.",
+      "ollamaNote": "Note : La connexion Ollama sera testée en vérifiant si le serveur est accessible."
+    },
+    "buttons": {
+      "back": "Retour",
+      "skip": "Passer",
+      "continue": "Continuer",
+      "saveAndContinue": "Enregistrer et continuer",
+      "saving": "Enregistrement..."
+    }
+  },
+  "ollama": {
+    "notInstalled": {
+      "title": "Ollama non installé",
+      "description": "Ollama fournit des modèles d'embeddings locaux gratuits pour la recherche sémantique. Installez-le en un clic pour activer cette fonctionnalité.",
+      "installSuccess": "Installation lancée dans votre terminal. Terminez l'installation là-bas, puis cliquez sur Réessayer.",
+      "installButton": "Installer Ollama",
+      "installing": "Installation...",
+      "retry": "Réessayer",
+      "learnMore": "En savoir plus",
+      "fallbackNote": "La mémoire fonctionnera toujours avec la recherche par mots-clés même sans Ollama."
+    },
+    "notRunning": {
+      "title": "Ollama non démarré",
+      "description": "Ollama est installé mais non démarré. Lancez Ollama pour utiliser les modèles d'embeddings locaux.",
+      "retry": "Réessayer",
+      "fallbackNote": "La mémoire fonctionnera toujours avec la recherche par mots-clés même sans embeddings."
+    }
+  }
+}

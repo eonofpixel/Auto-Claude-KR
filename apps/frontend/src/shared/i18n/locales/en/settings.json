@@ -1,0 +1,857 @@
+{
+  "title": "Settings",
+  "tabs": {
+    "app": "App Settings",
+    "project": "Project Settings"
+  },
+  "sections": {
+    "appearance": {
+      "title": "Appearance",
+      "description": "Customize how Auto Claude looks"
+    },
+    "display": {
+      "title": "Display",
+      "description": "Adjust the size of UI elements"
+    },
+    "language": {
+      "title": "Language",
+      "description": "Choose your preferred language"
+    },
+    "devtools": {
+      "title": "Developer Tools",
+      "description": "IDE and terminal preferences"
+    },
+    "agent": {
+      "title": "Agent Settings",
+      "description": "Default model and framework"
+    },
+    "paths": {
+      "title": "Paths",
+      "description": "CLI tools and framework paths"
+    },
+    "integrations": {
+      "title": "Integrations",
+      "description": "API keys & Claude accounts"
+    },
+    "api-profiles": {
+      "title": "API Profiles",
+      "description": "Custom API endpoint profiles"
+    },
+    "updates": {
+      "title": "Updates",
+      "description": "Auto Claude updates"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "description": "Alert preferences"
+    },
+    "debug": {
+      "title": "Debug & Logs",
+      "description": "Troubleshooting tools"
+    }
+  },
+  "apiProfiles": {
+    "title": "API Profiles",
+    "description": "Configure custom Anthropic-compatible API endpoints",
+    "addButton": "Add Profile",
+    "presets": {
+      "anthropic": "Anthropic",
+      "openrouter": "OpenRouter",
+      "groq": "Groq",
+      "glmGlobal": "GLM (Global)",
+      "glmChina": "GLM (China)"
+    },
+    "fields": {
+      "name": "Name",
+      "preset": "Preset",
+      "baseUrl": "Base URL",
+      "apiKey": "API Key"
+    },
+    "placeholders": {
+      "name": "My Custom API",
+      "preset": "Choose a provider preset",
+      "baseUrl": "https://api.anthropic.com",
+      "apiKey": "sk-ant-..."
+    },
+    "hints": {
+      "preset": "Presets fill the base URL; you still need to paste your API key.",
+      "baseUrl": "Example: https://api.anthropic.com or http://localhost:8080"
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "baseUrlRequired": "Base URL is required",
+      "baseUrlInvalid": "Invalid URL format (must be http:// or https://)",
+      "apiKeyRequired": "API Key is required",
+      "apiKeyInvalid": "Invalid API Key format"
+    },
+    "actions": {
+      "save": "Save Profile",
+      "saving": "Saving...",
+      "cancel": "Cancel",
+      "changeKey": "Change",
+      "cancelKeyChange": "Cancel"
+    },
+    "testConnection": {
+      "label": "Test Connection",
+      "testing": "Testing...",
+      "success": "Connection Successful",
+      "failure": "Connection Failed"
+    },
+    "models": {
+      "title": "Optional: Model Name Mappings",
+      "description": "Select models from your API provider. Leave blank to use defaults.",
+      "defaultLabel": "Default Model (Optional)",
+      "haikuLabel": "Haiku Model (Optional)",
+      "sonnetLabel": "Sonnet Model (Optional)",
+      "opusLabel": "Opus Model (Optional)",
+      "defaultPlaceholder": "e.g., claude-sonnet-4-5-20250929",
+      "haikuPlaceholder": "e.g., claude-haiku-4-5-20251001",
+      "sonnetPlaceholder": "e.g., claude-sonnet-4-5-20250929",
+      "opusPlaceholder": "e.g., claude-opus-4-5-20251101"
+    },
+    "empty": {
+      "title": "No API profiles configured",
+      "description": "Create a profile to configure custom API endpoints for your builds.",
+      "action": "Create First Profile"
+    },
+    "switchToOauth": {
+      "label": "Switch to OAuth",
+      "loading": "Switching..."
+    },
+    "activeBadge": "Active",
+    "customModels": "Custom models: {{models}}",
+    "setActive": {
+      "label": "Set Active",
+      "loading": "Setting..."
+    },
+    "tooltips": {
+      "edit": "Edit profile",
+      "deleteActive": "Switch to OAuth before deleting",
+      "deleteInactive": "Delete profile"
+    },
+    "deleteAriaLabel": "Delete profile {{name}}",
+    "toast": {
+      "create": {
+        "title": "Profile created",
+        "description": "\"{{name}}\" has been added successfully."
+      },
+      "update": {
+        "title": "Profile updated",
+        "description": "\"{{name}}\" has been updated successfully."
+      },
+      "delete": {
+        "title": "Profile deleted",
+        "description": "\"{{name}}\" has been removed.",
+        "errorTitle": "Failed to delete profile",
+        "errorFallback": "An error occurred while deleting the profile."
+      },
+      "switch": {
+        "oauthTitle": "Switched to OAuth",
+        "oauthDescription": "Now using OAuth authentication",
+        "profileTitle": "Profile activated",
+        "profileDescription": "Now using {{name}}",
+        "errorTitle": "Failed to switch authentication",
+        "errorFallback": "An error occurred while switching authentication method."
+      }
+    },
+    "dialog": {
+      "createTitle": "Add API Profile",
+      "editTitle": "Edit Profile",
+      "description": "Configure a custom Anthropic-compatible API endpoint for your builds.",
+      "deleteTitle": "Delete Profile?",
+      "deleteDescription": "Are you sure you want to delete \"{{name}}\"? This action cannot be undone.",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "deleting": "Deleting..."
+    }
+  },
+  "modelSelect": {
+    "placeholder": "Select a model or type manually",
+    "placeholderManual": "Enter model name (e.g., claude-sonnet-4-5-20250929)",
+    "searchPlaceholder": "Search models...",
+    "noResults": "No models match your search",
+    "discoveryNotAvailable": "Model discovery not available. Enter model name manually."
+  },
+  "language": {
+    "label": "Interface Language",
+    "description": "Select the language for the application interface"
+  },
+  "scale": {
+    "presets": "Scale Presets",
+    "presetsDescription": "Quick scale options for common preferences",
+    "fineTune": "Fine-tune Scale",
+    "fineTuneDescription": "Adjust from 75% to 200% in 5% increments",
+    "default": "Default",
+    "comfortable": "Comfortable",
+    "large": "Large",
+    "resetToDefault": "Reset to default (100%)",
+    "decreaseScale": "Decrease scale by {{step}}%",
+    "increaseScale": "Increase scale by {{step}}%",
+    "applyChanges": "Apply scale changes",
+    "apply": "Apply"
+  },
+  "general": {
+    "detecting": "Detecting...",
+    "otherAgentSettings": "Other Agent Settings",
+    "otherAgentSettingsDescription": "Additional agent configuration options",
+    "agentFramework": "Agent Framework",
+    "agentFrameworkDescription": "The coding framework used for autonomous tasks",
+    "agentFrameworkAutoClaude": "Auto Claude",
+    "aiTerminalNaming": "AI Terminal Naming",
+    "aiTerminalNamingDescription": "Automatically name terminals based on commands (uses Haiku)",
+    "featureModelSettings": "Feature Model Settings",
+    "featureModelSettingsDescription": "Model and thinking level for Insights, Ideation, and Roadmap",
+    "model": "Model",
+    "thinkingLevel": "Thinking Level",
+    "featureLabels": {
+      "insights": {
+        "label": "Insights Chat",
+        "description": "Ask questions about your codebase"
+      },
+      "ideation": {
+        "label": "Ideation",
+        "description": "Generate feature ideas and improvements"
+      },
+      "roadmap": {
+        "label": "Roadmap",
+        "description": "Create strategic feature roadmaps"
+      },
+      "githubIssues": {
+        "label": "GitHub Issues",
+        "description": "Automated issue triage and labeling"
+      },
+      "githubPrs": {
+        "label": "GitHub PR Review",
+        "description": "AI-powered pull request reviews"
+      },
+      "utility": {
+        "label": "Utility",
+        "description": "Commit messages and merge conflict resolution"
+      }
+    },
+    "paths": "Paths",
+    "pathsDescription": "Configure executable and framework paths",
+    "pythonPath": "Python Path",
+    "pythonPathDescription": "Path to Python executable (leave empty for auto-detection)",
+    "pythonPathPlaceholder": "python3 (default)",
+    "gitPath": "Git Path",
+    "gitPathDescription": "Path to Git executable (leave empty for auto-detection)",
+    "gitPathPlaceholder": "git (default)",
+    "githubCLIPath": "GitHub CLI Path",
+    "githubCLIPathDescription": "Path to GitHub CLI (gh) executable (leave empty for auto-detection)",
+    "githubCLIPathPlaceholder": "gh (default)",
+    "claudePath": "Claude CLI Path",
+    "claudePathDescription": "Path to Claude CLI executable (leave empty for auto-detection)",
+    "claudePathPlaceholder": "claude (default)",
+    "detectedPath": "Auto-detected",
+    "detectedVersion": "Version",
+    "detectedSource": "Source",
+    "sourceUserConfig": "User Configuration",
+    "sourceVenv": "Virtual Environment",
+    "sourceHomebrew": "Homebrew",
+    "sourceNvm": "NVM",
+    "sourceSystemPath": "System PATH",
+    "sourceBundled": "Bundled",
+    "sourceFallback": "Fallback",
+    "notDetected": "Not detected",
+    "autoClaudePath": "Auto Claude Path",
+    "autoClaudePathDescription": "Relative path to auto-claude directory in projects",
+    "autoClaudePathPlaceholder": "auto-claude (default)",
+    "autoNameTerminals": "Automatically name terminals",
+    "autoNameTerminalsDescription": "Use AI to generate descriptive names for terminal tabs based on their activity"
+  },
+  "theme": {
+    "title": "Appearance",
+    "description": "Customize how Auto Claude looks",
+    "mode": "Mode",
+    "modeDescription": "Choose between light and dark themes",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "colorTheme": "Color Theme",
+    "colorThemeDescription": "Choose your preferred color palette",
+    "colorThemes": {
+      "default": {
+        "name": "Default",
+        "description": "Oscura-inspired with pale yellow accent"
+      },
+      "dusk": {
+        "name": "Dusk",
+        "description": "Warmer variant with slightly lighter dark mode"
+      },
+      "lime": {
+        "name": "Lime",
+        "description": "Fresh, energetic lime with purple accents"
+      },
+      "ocean": {
+        "name": "Ocean",
+        "description": "Calm, professional blue tones"
+      },
+      "retro": {
+        "name": "Retro",
+        "description": "Warm, nostalgic amber vibes"
+      },
+      "neo": {
+        "name": "Neo",
+        "description": "Modern cyberpunk pink/magenta"
+      },
+      "forest": {
+        "name": "Forest",
+        "description": "Natural, earthy green tones"
+      }
+    }
+  },
+  "devtools": {
+    "title": "Developer Tools",
+    "description": "Configure your preferred IDE and terminal for working with worktrees",
+    "detecting": "Detecting installed tools...",
+    "detectAgain": "Detect Again",
+    "ide": {
+      "label": "Preferred IDE",
+      "description": "Auto Claude will open worktrees in this editor",
+      "placeholder": "Select IDE...",
+      "customPath": "Custom IDE Path",
+      "customPathPlaceholder": "/path/to/your/ide",
+      "custom": "Custom..."
+    },
+    "terminal": {
+      "label": "Preferred Terminal",
+      "description": "Auto Claude will open terminal sessions here",
+      "placeholder": "Select terminal...",
+      "customPath": "Custom Terminal Path",
+      "customPathPlaceholder": "/path/to/your/terminal",
+      "custom": "Custom..."
+    },
+    "detected": "Detected",
+    "notInstalled": "Not installed",
+    "detectedSummary": "Detected on your system:",
+    "noToolsDetected": "No additional tools detected (VS Code and system terminal will be used)",
+    "yoloMode": {
+      "label": "YOLO Mode",
+      "description": "Start Claude with --dangerously-skip-permissions flag, bypassing all safety prompts. Use with extreme caution.",
+      "warning": "This mode bypasses Claude's permission system. Only enable if you fully trust the code being executed."
+    }
+  },
+  "updates": {
+    "title": "Updates",
+    "description": "Manage Auto Claude updates",
+    "version": "Version",
+    "loading": "Loading...",
+    "updateFromFile": "Update from File",
+    "autoUpdateProjects": "Auto-Update Projects",
+    "autoUpdateProjectsDescription": "Automatically update Auto Claude in projects when a new version is available"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "description": "Configure default notification preferences",
+    "onTaskComplete": "On Task Complete",
+    "onTaskCompleteDescription": "Notify when a task finishes successfully",
+    "onTaskFailed": "On Task Failed",
+    "onTaskFailedDescription": "Notify when a task encounters an error",
+    "onReviewNeeded": "On Review Needed",
+    "onReviewNeededDescription": "Notify when QA requires your review",
+    "sound": "Sound",
+    "soundDescription": "Play sound with notifications"
+  },
+  "actions": {
+    "save": "Save Settings",
+    "rerunWizard": "Re-run Wizard",
+    "rerunWizardDescription": "Start the setup wizard again"
+  },
+  "linear": {
+    "title": "Linear Integration",
+    "enabled": "Enabled",
+    "enableSync": "Enable Linear Sync",
+    "enableSyncDescription": "Create and update Linear issues automatically",
+    "apiKey": "API Key",
+    "apiKeyHint": "Get your API key from",
+    "linearSettings": "Linear Settings",
+    "connectionStatus": "Connection Status",
+    "checking": "Checking...",
+    "connected": "Connected",
+    "connectedTo": "Connected to {{team}}",
+    "notConnected": "Not connected",
+    "tasksAvailable": "{{count}}+ tasks available to import",
+    "importTasks": "Import Existing Tasks",
+    "importTasksDescription": "Select which Linear issues to import into AutoBuild as tasks.",
+    "importFromLinear": "Import Tasks from Linear",
+    "realtimeSync": "Real-time Sync",
+    "realtimeSyncDescription": "Automatically import new tasks created in Linear",
+    "realtimeSyncWarning": "When enabled, new Linear issues will be automatically imported into AutoBuild. Make sure to configure your team/project filters below to control which issues are imported.",
+    "teamIdOptional": "Team ID (Optional)",
+    "projectIdOptional": "Project ID (Optional)",
+    "autoDetected": "Auto-detected",
+    "autoCreated": "Auto-created"
+  },
+  "memory": {
+    "title": "Memory",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "enableMemory": "Enable Memory",
+    "enableMemoryDescription": "Persistent cross-session memory using embedded graph database",
+    "fileBasedDescription": "Using file-based memory. Session insights are stored locally in JSON files. Enable Memory for persistent cross-session context with semantic search.",
+    "enableAgentAccess": "Enable Agent Memory Access",
+    "enableAgentAccessDescription": "Allow agents to search and add to the knowledge graph via MCP",
+    "mcpServerUrl": "Graphiti MCP Server URL",
+    "mcpServerUrlDescription": "URL of the Graphiti MCP server",
+    "embeddingProvider": "Embedding Provider",
+    "embeddingProviderDescription": "Provider for semantic search (optional - keyword search works without)",
+    "selectEmbeddingProvider": "Select embedding provider",
+    "selectEmbeddingModel": "Select embedding model",
+    "openaiApiKey": "OpenAI API Key",
+    "override": "(Override)",
+    "usingGlobalKey": "Using global key",
+    "usingGlobalKeyDescription": "Using key from App Settings. Enter a project-specific key below to override.",
+    "openaiRequired": "Required for OpenAI embeddings",
+    "voyageApiKey": "Voyage AI API Key",
+    "voyageRequired": "Required for Voyage AI embeddings",
+    "embeddingModel": "Embedding Model",
+    "embeddingModelOptional": "Embedding Model (optional)",
+    "googleApiKey": "Google AI API Key",
+    "googleRequired": "Required for Google AI embeddings",
+    "azureConfig": "Azure OpenAI Configuration",
+    "apiKey": "API Key",
+    "azureApiKeyPlaceholder": "Azure API Key",
+    "baseUrl": "Base URL",
+    "embeddingDeployment": "Embedding Deployment Name",
+    "ollamaConfig": "Ollama Configuration",
+    "checking": "Checking...",
+    "connected": "Connected",
+    "notRunning": "Not running",
+    "ollamaRecommended": "Recommended: qwen3-embedding:4b (balanced), :8b (quality), :0.6b (fast)",
+    "embeddingDimension": "Embedding Dimension",
+    "embeddingDimensionDescription": "Required for Ollama embeddings (e.g., 768 for nomic-embed-text)",
+    "databaseName": "Database Name",
+    "databaseNameDescription": "Name for the memory database (stored in ~/.auto-claude/memories/)",
+    "databasePath": "Database Path (Optional)",
+    "databasePathDescription": "Custom storage location. Default: ~/.auto-claude/memories/"
+  },
+  "claudeAuth": {
+    "title": "Claude Authentication",
+    "connected": "Connected",
+    "notConnected": "Not Connected",
+    "loadingConfig": "Loading configuration...",
+    "claudeCli": "Claude CLI",
+    "checking": "Checking...",
+    "authenticatedViaOAuth": "Authenticated via OAuth",
+    "notAuthenticated": "Not authenticated",
+    "statusUnknown": "Status unknown",
+    "reAuthenticate": "Re-authenticate",
+    "setupOAuth": "Setup OAuth",
+    "oauthToken": "OAuth Token",
+    "override": "(Override)",
+    "usingGlobalToken": "Using global token",
+    "usingGlobalTokenDescription": "Using token from App Settings. Enter a project-specific token below to override.",
+    "pasteTokenHint": "Paste your OAuth token here or run claude setup-token to get one.",
+    "enterToOverride": "Enter to override global token...",
+    "tokenPlaceholder": "your-oauth-token-here"
+  },
+  "projectSections": {
+    "general": {
+      "title": "General",
+      "description": "Auto-Build and agent config",
+      "useClaudeMd": "Use CLAUDE.md",
+      "useClaudeMdDescription": "Include CLAUDE.md instructions in agent context"
+    },
+    "claude": {
+      "title": "Claude Auth",
+      "description": "Claude authentication"
+    },
+    "linear": {
+      "title": "Linear",
+      "description": "Linear integration",
+      "integrationTitle": "Linear Integration",
+      "integrationDescription": "Connect to Linear for issue tracking and task import",
+      "syncDescription": "Sync with Linear for issue tracking",
+      "enableSync": "Enable Linear Sync",
+      "enableSyncDescription": "Create and update Linear issues automatically",
+      "apiKey": "API Key",
+      "apiKeyHint": "Get your API key from",
+      "linearSettings": "Linear Settings",
+      "connectionStatus": "Connection Status",
+      "checking": "Checking...",
+      "connected": "Connected",
+      "connectedTo": "Connected to {{team}}",
+      "notConnected": "Not connected",
+      "tasksAvailable": "{{count}}+ tasks available to import",
+      "importTasks": "Import Existing Tasks",
+      "importTasksDescription": "Select which Linear issues to import into AutoBuild as tasks.",
+      "importFromLinear": "Import Tasks from Linear",
+      "realtimeSync": "Real-time Sync",
+      "realtimeSyncDescription": "Automatically import new tasks created in Linear",
+      "realtimeSyncWarning": "When enabled, new Linear issues will be automatically imported into AutoBuild. Make sure to configure your team/project filters below to control which issues are imported.",
+      "teamIdOptional": "Team ID (Optional)",
+      "projectIdOptional": "Project ID (Optional)",
+      "autoDetected": "Auto-detected",
+      "autoCreated": "Auto-created"
+    },
+    "github": {
+      "title": "GitHub",
+      "description": "GitHub issues sync",
+      "integrationTitle": "GitHub Integration",
+      "integrationDescription": "Connect to GitHub for issue tracking",
+      "syncDescription": "Sync with GitHub Issues"
+    },
+    "gitlab": {
+      "title": "GitLab",
+      "description": "GitLab issues sync",
+      "integrationTitle": "GitLab Integration",
+      "integrationDescription": "Connect to GitLab for issue tracking",
+      "syncDescription": "Sync with GitLab Issues"
+    },
+    "memory": {
+      "title": "Memory",
+      "description": "Graphiti memory backend",
+      "integrationTitle": "Memory",
+      "integrationDescription": "Configure persistent cross-session memory for agents",
+      "syncDescription": "Configure persistent memory"
+    }
+  },
+  "agentProfile": {
+    "label": "Agent Profile",
+    "title": "Default Agent Profile",
+    "sectionDescription": "Select a preset configuration for model and thinking level",
+    "profilesInfo": "Agent profiles provide preset configurations for Claude model and thinking level. When you create a new task, these settings will be used as defaults. You can always override them in the task creation wizard.",
+    "custom": "Custom",
+    "customConfiguration": "Custom Configuration",
+    "customDescription": "Choose model & thinking level",
+    "phaseConfiguration": "Phase Configuration",
+    "phaseConfigurationDescription": "Customize model and thinking level for each phase",
+    "clickToCustomize": "Click to customize",
+    "model": "Model",
+    "thinking": "Thinking",
+    "thinkingLevel": "Thinking Level",
+    "selectModel": "Select model",
+    "selectThinkingLevel": "Select thinking level",
+    "perPhaseOptimization": "(per-phase optimization)",
+    "resetToDefaults": "Reset to defaults",
+    "resetToProfileDefaults": "Reset to {{profile}} defaults",
+    "customized": "Customized",
+    "phaseConfigNote": "These settings will be used as defaults when creating new tasks with this profile. You can override them per-task in the task creation wizard.",
+    "phases": {
+      "spec": {
+        "label": "Spec Creation",
+        "description": "Discovery, requirements, context gathering"
+      },
+      "planning": {
+        "label": "Planning",
+        "description": "Implementation planning and architecture"
+      },
+      "coding": {
+        "label": "Coding",
+        "description": "Actual code implementation"
+      },
+      "qa": {
+        "label": "QA Review",
+        "description": "Quality assurance and validation"
+      }
+    },
+    "profiles": {
+      "auto": {
+        "name": "Auto (Optimized)",
+        "description": "Uses Opus across all phases with optimized thinking levels"
+      },
+      "complex": {
+        "name": "Complex Tasks",
+        "description": "For intricate, multi-step implementations requiring deep analysis"
+      },
+      "balanced": {
+        "name": "Balanced",
+        "description": "Good balance of speed and quality for most tasks"
+      },
+      "quick": {
+        "name": "Quick Edits",
+        "description": "Fast iterations for simple changes and quick fixes"
+      }
+    }
+  },
+  "workspace": {
+    "roles": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "mobile": "Mobile",
+      "shared": "Shared",
+      "apiGateway": "API Gateway",
+      "worker": "Worker",
+      "other": "Other"
+    }
+  },
+  "integrations": {
+    "title": "Integrations",
+    "description": "Manage Claude accounts and API keys",
+    "claudeAccounts": "Claude Accounts",
+    "claudeAccountsDescription": "Add multiple Claude subscriptions to automatically switch between them when you hit rate limits.",
+    "noAccountsYet": "No accounts configured yet",
+    "default": "Default",
+    "active": "Active",
+    "authenticated": "Authenticated",
+    "needsAuth": "Needs Auth",
+    "authenticate": "Authenticate",
+    "setActive": "Set Active",
+    "manualTokenEntry": "Manual Token Entry",
+    "runSetupToken": "Run claude setup-token to get your token",
+    "tokenPlaceholder": "sk-ant-oat01-...",
+    "emailPlaceholder": "Email (optional, for display)",
+    "saveToken": "Save Token",
+    "accountNamePlaceholder": "Account name (e.g., Work, Personal)",
+    "autoSwitching": "Automatic Account Switching",
+    "autoSwitchingDescription": "Automatically switch between Claude accounts to avoid interruptions. Configure proactive monitoring to switch before hitting limits.",
+    "enableAutoSwitching": "Enable automatic switching",
+    "masterSwitch": "Master switch for all auto-swap features",
+    "proactiveMonitoring": "Proactive Monitoring",
+    "proactiveDescription": "Check usage regularly and swap before hitting limits",
+    "checkUsageEvery": "Check usage every",
+    "seconds15": "15 seconds",
+    "seconds30": "30 seconds (recommended)",
+    "minute1": "1 minute",
+    "disabled": "Disabled",
+    "sessionThreshold": "Session usage threshold",
+    "sessionThresholdDescription": "Switch when session usage reaches this level (recommended: 95%)",
+    "weeklyThreshold": "Weekly usage threshold",
+    "weeklyThresholdDescription": "Switch when weekly usage reaches this level (recommended: 99%)",
+    "reactiveRecovery": "Reactive Recovery",
+    "reactiveDescription": "Auto-swap when unexpected rate limit is hit",
+    "apiKeys": "API Keys",
+    "apiKeysInfo": "Keys set here are used as defaults. Individual projects can override these in their settings.",
+    "openaiKey": "OpenAI API Key",
+    "openaiKeyDescription": "Required for Graphiti memory backend (embeddings)",
+    "toast": {
+      "authSuccess": "Profile Authenticated",
+      "authSuccessWithEmail": "Connected as {{email}}",
+      "authSuccessGeneric": "Authentication complete. You can now use this profile.",
+      "authStartFailed": "Authentication Failed",
+      "addProfileFailed": "Failed to Add Profile",
+      "tokenSaved": "Token Saved",
+      "tokenSavedDescription": "Your token has been saved successfully.",
+      "tokenSaveFailed": "Failed to Save Token",
+      "settingsUpdateFailed": "Failed to Update Settings",
+      "tryAgain": "Please try again."
+    }
+  },
+  "debug": {
+    "title": "Debug & Logs",
+    "description": "Access logs and debug information for troubleshooting",
+    "errorReporting": {
+      "label": "Anonymous Error Reporting",
+      "description": "Send crash reports to help improve Auto Claude. No personal data or code is collected."
+    },
+    "openLogsFolder": "Open Logs Folder",
+    "copyDebugInfo": "Copy Debug Info",
+    "copied": "Copied!",
+    "loadInfo": "Load Debug Info",
+    "systemInfo": "System Information",
+    "logsLocation": "Logs Location",
+    "recentErrors": "Recent Errors",
+    "noRecentErrors": "No recent errors",
+    "helpTitle": "Reporting Issues",
+    "helpText": "When reporting bugs, click \"Copy Debug Info\" to get system information and recent errors that help us diagnose the issue."
+  },
+  "githubIntegration": {
+    "enableGitHub": "Enable GitHub Issues",
+    "enableDescription": "Sync issues from GitHub and create tasks automatically",
+    "connectedViaGhCli": "Connected via GitHub CLI",
+    "authenticatedAs": "Authenticated as {{username}}",
+    "useDifferentToken": "Use Different Token",
+    "authentication": "GitHub Authentication",
+    "useManualToken": "Use Manual Token",
+    "personalAccessToken": "Personal Access Token",
+    "useOAuthInstead": "Use OAuth Instead",
+    "tokenHelp": "Create a token with <code>repo</code> scope from",
+    "gitHubSettings": "GitHub Settings",
+    "tokenPlaceholder": "ghp_xxxxxxxx or github_pat_xxxxxxxx",
+    "repository": "Repository",
+    "enterManually": "Enter Manually",
+    "loadingRepos": "Loading repositories...",
+    "selectRepository": "Select a repository...",
+    "searchRepositories": "Search repositories...",
+    "noMatchingRepos": "No matching repositories",
+    "noReposFound": "No repositories found",
+    "selected": "Selected:",
+    "repoFormat": "Format: <code>owner/repo</code> (e.g., facebook/react)",
+    "repoPlaceholder": "owner/repository",
+    "connectionStatus": "Connection Status",
+    "checking": "Checking...",
+    "connectedTo": "Connected to {{repo}}",
+    "notConnected": "Not connected",
+    "issuesAvailable": "Issues Available",
+    "issuesDescription": "Access GitHub Issues from the sidebar to view, investigate, and create tasks from issues.",
+    "autoSync": "Auto-Sync on Load",
+    "autoSyncDescription": "Automatically fetch issues when the project loads",
+    "defaultBranch": "Default Branch",
+    "branchDescription": "Base branch for creating task worktrees",
+    "loadingBranches": "Loading branches...",
+    "autoDetect": "Auto-detect (main/master)",
+    "searchBranches": "Search branches...",
+    "noMatchingBranches": "No matching branches",
+    "noBranchesFound": "No branches found",
+    "newTasksBranchFrom": "All new tasks will branch from"
+  },
+  "projectSelector": {
+    "placeholder": "Select a project...",
+    "noProjects": "No projects yet",
+    "addProject": "Add Project..."
+  },
+  "projectSettings": {
+    "noProjectSelected": {
+      "title": "No Project Selected",
+      "description": "Select a project from the sidebar to configure its settings."
+    }
+  },
+  "initializationGuard": {
+    "initializeFirst": "Initialize Auto-Build first to configure {{feature}}"
+  },
+  "mcp": {
+    "title": "MCP Server Overview",
+    "titleWithProject": "MCP Server Overview for {{projectName}}",
+    "forProject": "for {{projectName}}",
+    "description": "Configure which MCP servers are available for agents in this project",
+    "descriptionNoProject": "Select a project to configure MCP servers",
+    "serversEnabled": "{{count}} servers enabled",
+    "configuration": "MCP Server Configuration",
+    "configurationHint": "Disabled servers reduce context usage and startup time",
+    "noProjectSelected": "No Project Selected",
+    "noProjectSelectedDescription": "Select a project from the dropdown to view and configure MCP servers.",
+    "projectNotInitialized": "Project Not Initialized",
+    "projectNotInitializedDescription": "Initialize Auto Claude for this project to configure MCP servers.",
+    "browserAutomation": "Browser Automation (QA agents only)",
+    "alwaysEnabled": "always enabled",
+    "addServer": "Add Server",
+    "addMcpTo": "Add MCP Server to {{agent}}",
+    "addMcpDescription": "Select an MCP server to add to this agent",
+    "allMcpsAdded": "All available MCP servers are already added",
+    "added": "added",
+    "removed": "removed",
+    "remove": "Remove",
+    "restore": "Restore",
+    "noMcpServers": "No MCP servers",
+    "cannotRemove": "Cannot remove (required)",
+    "mcpServersLabel": "MCP Servers",
+    "availableTools": "Available Tools",
+    "healthCheckFailed": "Health check failed",
+    "connectionTestFailed": "Connection test failed",
+    "agentsCount": "({{count}} agents)",
+    "agentsCount_one": "(1 agent)",
+    "servers": {
+      "context7": {
+        "name": "Context7",
+        "description": "Documentation lookup for libraries"
+      },
+      "graphiti": {
+        "name": "Graphiti Memory",
+        "description": "Knowledge graph for cross-session context",
+        "notConfigured": "Requires memory configuration (see Memory settings)"
+      },
+      "linear": {
+        "name": "Linear",
+        "description": "Project management integration",
+        "notConfigured": "Requires Linear integration (see Linear settings)"
+      },
+      "electron": {
+        "name": "Electron",
+        "description": "Desktop app automation via Chrome DevTools"
+      },
+      "puppeteer": {
+        "name": "Puppeteer",
+        "description": "Web browser automation for testing"
+      },
+      "autoClaude": {
+        "name": "Auto-Claude Tools",
+        "description": "Build progress tracking"
+      }
+    },
+    "customServers": "Custom Servers",
+    "addCustomServer": "Add Custom Server",
+    "editCustomServer": "Edit Custom Server",
+    "customServerDescription": "Add a command-based or HTTP-based MCP server",
+    "serverType": "Server Type",
+    "typeCommand": "Command (npx/npm)",
+    "typeHttp": "HTTP",
+    "serverName": "Name",
+    "serverNamePlaceholder": "My MCP Server",
+    "serverDescription": "Description",
+    "serverDescriptionPlaceholder": "What this server does",
+    "command": "Command",
+    "commandPlaceholder": "npx",
+    "args": "Arguments",
+    "argsPlaceholder": "-y @myorg/my-mcp-server",
+    "argsHint": "Space-separated arguments",
+    "url": "URL",
+    "urlPlaceholder": "https://mcp.example.com/mcp",
+    "headers": "Headers",
+    "headerName": "Header Name",
+    "headerValue": "Header Value",
+    "noCustomServers": "No custom servers configured. Add one to use with your agents.",
+    "errorNameRequired": "Server name is required",
+    "errorIdExists": "A server with this ID already exists",
+    "errorCommandRequired": "Command is required for command-based servers",
+    "errorUrlRequired": "URL is required for HTTP-based servers",
+    "testConnection": "Test",
+    "testing": "Testing...",
+    "authToken": "Authentication Token",
+    "authTokenPlaceholder": "Paste your API token or PAT here",
+    "authTokenHint": "Used as Bearer token in the Authorization header",
+    "advancedHeaders": "Additional Headers",
+    "status": {
+      "healthy": "Server is responding",
+      "unhealthy": "Server is not responding",
+      "needsAuth": "Authentication required",
+      "checking": "Checking...",
+      "unknown": "Status unknown"
+    },
+    "hints": {
+      "github": "This looks like a GitHub MCP server. You'll need a Personal Access Token with appropriate scopes.",
+      "createGithubPat": "Create GitHub PAT",
+      "google": "This looks like a Google API. You'll need an OAuth token or API key.",
+      "createGoogleToken": "Create Google Credentials",
+      "anthropic": "This looks like an Anthropic API. You'll need an API key.",
+      "createAnthropicKey": "Create Anthropic API Key",
+      "openai": "This looks like an OpenAI API. You'll need an API key.",
+      "createOpenaiKey": "Create OpenAI API Key"
+    }
+  },
+  "githubOAuth": {
+    "needInstall": {
+      "title": "GitHub CLI Required",
+      "description": "The GitHub CLI (gh) is required for OAuth authentication. This provides a secure way to authenticate without manually creating tokens.",
+      "installButton": "Install GitHub CLI",
+      "installedButton": "I've Installed It",
+      "instructions": "Installation instructions:",
+      "macOS": "macOS:",
+      "windows": "Windows:",
+      "linux": "Linux: Visit"
+    },
+    "needAuth": {
+      "title": "Connect to GitHub",
+      "description": "Click the button below to authenticate with GitHub. This will open your browser where you can authorize the application.",
+      "usingVersion": "Using GitHub CLI {{version}}",
+      "authButton": "Authenticate with GitHub"
+    },
+    "authenticating": {
+      "title": "Authenticating...",
+      "browserOpened": "Please complete the authentication in your browser. This window will update automatically.",
+      "waiting": "Waiting for authentication flow to start...",
+      "oneTimeCode": "Your one-time code",
+      "copied": "Copied",
+      "copy": "Copy",
+      "enterCode": "Enter this code in your browser to complete authentication.",
+      "copyAndOpen": "Copy this code, then open the link below to authenticate.",
+      "open": "Open"
+    },
+    "success": {
+      "title": "Successfully Connected",
+      "connectedAs": "Connected as {{username}}",
+      "connected": "Your GitHub account is now connected"
+    },
+    "error": {
+      "timedOut": "Authentication Timed Out",
+      "timedOutDescription": "Authentication timed out. The authentication window was open for too long. Please try again.",
+      "failed": "Authentication Failed",
+      "manualTitle": "Complete Authentication Manually",
+      "manualDescription": "The browser couldn't be opened automatically. Please visit the URL below to complete authentication:",
+      "copyUrl": "Copy URL",
+      "openInBrowser": "Open in Browser"
+    },
+    "retry": "Try Again",
+    "cancel": "Cancel"
+  }
+}

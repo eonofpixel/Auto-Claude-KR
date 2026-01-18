@@ -1,0 +1,17 @@
+{
+  "discoveringContext": "프로젝트 컨텍스트 분석 중...",
+  "gatheringRequirements": "요구사항 수집 중...",
+  "writingSpec": "명세서 작성 중...",
+  "validatingSpec": "명세서 검증 중...",
+  "specComplete": "명세서 완료",
+  "creatingPlan": "구현 계획 생성 중...",
+  "implementingChanges": "코드 변경 구현 중...",
+  "runningQAReview": "QA 검토 실행 중...",
+  "fixingQAIssues": "QA 이슈 수정 중...",
+  "buildPaused": "빌드 일시 중지 - 하위 작업 대기 중",
+  "startingSpecCreation": "명세서 생성 시작 중...",
+  "startingBuildProcess": "빌드 프로세스 시작 중...",
+  "workingOnSubtask": "하위 작업 {{subtask}} 진행 중...",
+  "subtaskCompleted": "하위 작업 {{subtask}} 완료",
+  "processExited": "프로세스가 코드 {{code}}(으)로 종료됨"
+}
