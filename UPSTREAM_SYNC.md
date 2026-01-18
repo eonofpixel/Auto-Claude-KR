@@ -94,7 +94,7 @@ apps/frontend/src/renderer/components/settings/AdvancedSettings.tsx - UI 간소�
 | ⏳ | `f700b18d` | CodeQL 보안 수정 | #1286 |
 | ⏳ | `44304a61` | Planning 단계 잘못된 멈춤 감지 수정 | #1236 |
 | ⏳ | `90204469` | Windows 좀비 프로세스 축적 방지 | #1259 |
-| ⏳ | `cb786cac` | Windows pywin32 DLL 로딩 실패 수정 | #1244 |
+| ✅ | `cb786cac` | Windows pywin32 DLL 로딩 실패 수정 | #1244 |
 
 ### 중요도 중간 (기능 개선)
 
@@ -126,6 +126,9 @@ apps/frontend/src/renderer/components/settings/AdvancedSettings.tsx - UI 간소�
 ---
 
 ## 동기화 히스토리
+
+### 2026-01-18 - pywin32 수정 적용
+- `cb786cac` cherry-pick: Windows pywin32 DLL 로딩 실패 수정
 
 ### 2026-01-18 - 초기 포크
 - 원본 v2.7.4 기준으로 포크
