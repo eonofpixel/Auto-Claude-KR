@@ -18,7 +18,6 @@ import type {
 } from '../../shared/types';
 import { AgentManager } from '../agent';
 import type { BrowserWindow } from 'electron';
-import { setUpdateChannel, setUpdateChannelWithDowngradeCheck } from '../app-updater';
 import { getSettingsPath, readSettingsFile } from '../settings-utils';
 import { configureTools, getToolPath, getToolInfo, isPathFromWrongPlatform, preWarmToolCache } from '../cli-tool-manager';
 import { parseEnvFile } from './utils';
@@ -233,20 +232,6 @@ export function registerSettingsHandlers(
           preWarmToolCache(['claude']).catch((error) => {
             console.warn('[SETTINGS_SAVE] Failed to re-warm CLI cache:', error);
           });
-        }
-
-        // Update auto-updater channel if betaUpdates setting changed
-        if (settings.betaUpdates !== undefined) {
-          if (settings.betaUpdates) {
-            // Enabling beta updates - just switch channel
-            setUpdateChannel('beta');
-          } else {
-            // Disabling beta updates - switch to stable and check if downgrade is available
-            // This will notify the renderer if user is on a prerelease and stable version exists
-            setUpdateChannelWithDowngradeCheck('latest', true).catch((err) => {
-              console.error('[settings-handlers] Failed to check for stable downgrade:', err);
-            });
-          }
         }
 
         // Sync language to main process i18n when language changes
