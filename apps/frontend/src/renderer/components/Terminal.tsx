@@ -116,7 +116,6 @@ export const Terminal = forwardRef<TerminalHandle, TerminalProps>(function Termi
   const {
     terminalRef,
     xtermRef: _xtermRef,
-    fit,
     write: _write,  // Output now handled by useGlobalTerminalListeners
     writeln,
     focus,
@@ -173,14 +172,11 @@ export const Terminal = forwardRef<TerminalHandle, TerminalProps>(function Termi
     },
   });
 
-  // Handle terminal events
+  // Handle terminal events (output is now handled globally via useGlobalTerminalListeners)
   useTerminalEvents({
     terminalId: id,
     // Pass recreation ref to skip auto-removal during deliberate terminal recreation
     isRecreatingRef,
-    onOutput: (data) => {
-      write(data);
-    },
     onExit: (exitCode) => {
       isCreatedRef.current = false;
       writeln(`\r\n\x1b[90mProcess exited with code ${exitCode}\x1b[0m`);
