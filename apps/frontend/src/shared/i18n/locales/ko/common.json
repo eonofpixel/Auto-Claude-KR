@@ -117,6 +117,15 @@
     "apiProfile": "API 프로필",
     "usingProfile": "사용 중인 프로필:"
   },
+  "selection": {
+    "select": "선택",
+    "done": "완료",
+    "selected": "{{count}}개 선택됨",
+    "selectAll": "모두 선택",
+    "clearSelection": "선택 해제",
+    "deleteSelected": "선택 항목 삭제",
+    "selectedOfTotal": "{{total}}개 중 {{selected}}개 선택됨"
+  },
   "time": {
     "justNow": "방금 전",
     "minutesAgo": "{{count}}분 전",
