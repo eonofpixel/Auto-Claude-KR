@@ -199,9 +199,54 @@ git log upstream/develop --oneline --since="1 week ago"
 
 ---
 
+## 미적용 항목 (나중에 진행)
+
+### Biome 마이그레이션 (`0b2cf9b0`)
+
+> **상태:** 보류 - 대규모 변경으로 별도 브랜치에서 테스트 필요
+
+**변경 내용:**
+- ESLint + Prettier → Biome 전환
+- `eslint.config.js` 삭제
+- `biome.json` 추가
+- `package.json` 의존성 대폭 변경
+
+**적용 방법:**
+```bash
+# 1. 별도 브랜치 생성
+git checkout -b feat/biome-migration
+
+# 2. 커밋 적용
+git cherry-pick 0b2cf9b0
+
+# 3. 충돌 해결 (예상: package.json, 설정 파일)
+# - 우리 i18n 설정 유지
+# - Biome 설정과 병합
+
+# 4. 의존성 재설치
+cd apps/frontend && npm install
+
+# 5. 린트 테스트
+npm run lint
+
+# 6. 빌드 테스트
+npm run build
+
+# 7. 문제 없으면 main에 병합
+git checkout main
+git merge feat/biome-migration
+```
+
+**주의사항:**
+- CI/CD 워크플로우 수정 필요할 수 있음
+- VSCode/Cursor 확장 설정 변경 필요
+- 팀원 모두 Biome 설치 필요
+
+---
+
 ## 적용 권장 순서
 
-1. **버그 수정 먼저**: `4b740928`, `e989300b`, `90204469`
-2. **보안 수정**: `f700b18d`
-3. **기능 개선**: `3606a632` (Kanban), `8833feb2` (Worktree)
-4. **나머지 선택적 적용**
+1. ~~**버그 수정 먼저**: `4b740928`, `e989300b`, `90204469`~~ ✅ 완료
+2. ~~**보안 수정**: `f700b18d`~~ ✅ 완료
+3. ~~**기능 개선**: `3606a632` (Kanban), `8833feb2` (Worktree)~~ ✅ 완료
+4. **Biome 마이그레이션**: 별도 브랜치에서 테스트 후 적용
