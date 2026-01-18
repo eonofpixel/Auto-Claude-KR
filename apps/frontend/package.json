@@ -1,6 +1,6 @@
 {
   "name": "auto-claude-ui",
-  "version": "2.7.4",
+  "version": "1.0.0",
   "type": "module",
   "description": "Desktop UI for Auto Claude autonomous coding framework",
   "homepage": "https://github.com/eonofpixel/Auto-Claude-KR",
@@ -140,8 +140,8 @@
     "dmg-builder": "^26.0.12"
   },
   "build": {
-    "appId": "com.autoclaude.ui",
-    "productName": "Auto-Claude",
+    "appId": "com.eonofpixel.autoclaude-kr",
+    "productName": "Auto-Claude-KR",
     "artifactName": "${productName}-${version}-${platform}-${arch}.${ext}",
     "publish": [
       {
