@@ -26,6 +26,14 @@ export function getCurrentVersion(): string {
 }
 
 /**
+ * Stop periodic update checks (no-op for manual updater)
+ * This function exists for compatibility with upstream code.
+ */
+export function stopPeriodicUpdates(): void {
+  // No periodic updates in manual updater
+}
+
+/**
  * Open file dialog to select an update installer file
  * Then run the installer and quit the app
  */
