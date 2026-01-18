@@ -88,7 +88,16 @@
     "worktreeCleanupNotStaged": "This task has a worktree with changes that have not been merged. Delete the worktree to mark as done, or cancel to review the changes first.",
     "keepWorktree": "Keep Worktree",
     "deleteWorktree": "Delete Worktree & Mark Done",
-    "refreshTasks": "Refresh Tasks"
+    "refreshTasks": "Refresh Tasks",
+    "orderSaveFailedTitle": "Reorder not saved",
+    "orderSaveFailedDescription": "Your task order change was applied but couldn't be saved to storage. It will be lost on refresh.",
+    "selectAll": "Select all",
+    "deselectAll": "Deselect all",
+    "selectedCount": "{{count}} selected",
+    "selectedCountOne": "{{count}} task selected",
+    "selectedCountOther": "{{count}} tasks selected",
+    "createPRs": "Create PRs",
+    "clearSelection": "Clear Selection"
   },
   "execution": {
     "phases": {

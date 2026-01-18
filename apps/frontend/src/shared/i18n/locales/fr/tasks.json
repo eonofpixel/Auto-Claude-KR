@@ -83,7 +83,16 @@
     "worktreeCleanupNotStaged": "Cette tâche possède un worktree avec des changements non fusionnés. Supprimez le worktree pour marquer comme terminé, ou annulez pour réviser les changements d'abord.",
     "keepWorktree": "Garder le Worktree",
     "deleteWorktree": "Supprimer le Worktree & Marquer Terminé",
-    "refreshTasks": "Actualiser les tâches"
+    "refreshTasks": "Actualiser les tâches",
+    "orderSaveFailedTitle": "Réorganisation non enregistrée",
+    "orderSaveFailedDescription": "Votre changement d'ordre des tâches a été appliqué mais n'a pas pu être sauvegardé. Il sera perdu lors du rafraîchissement.",
+    "selectAll": "Tout sélectionner",
+    "deselectAll": "Tout désélectionner",
+    "selectedCount": "{{count}} sélectionné(s)",
+    "selectedCountOne": "{{count}} tâche sélectionnée",
+    "selectedCountOther": "{{count}} tâches sélectionnées",
+    "createPRs": "Créer les PRs",
+    "clearSelection": "Effacer la sélection"
   },
   "execution": {
     "phases": {
