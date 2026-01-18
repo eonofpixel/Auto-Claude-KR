@@ -81,7 +81,11 @@ export function useXterm({ terminalId, onCommandEnter, onResize, onDimensionsRea
     });
 
     const fitAddon = new FitAddon();
-    const webLinksAddon = new WebLinksAddon();
+    const webLinksAddon = new WebLinksAddon((_event, uri) => {
+      window.electronAPI?.openExternal?.(uri).catch((error) => {
+        console.warn('[useXterm] Failed to open URL:', uri, error);
+      });
+    });
     const serializeAddon = new SerializeAddon();
 
     xterm.loadAddon(fitAddon);
@@ -317,6 +321,24 @@ export function useXterm({ terminalId, onCommandEnter, onResize, onDimensionsRea
       return () => resizeObserver.disconnect();
     }
   }, [onDimensionsReady]);
+
+  // Listen for terminal refit events (triggered after drag-drop reorder)
+  useEffect(() => {
+    const handleRefitAll = () => {
+      if (fitAddonRef.current && xtermRef.current && terminalRef.current) {
+        const rect = terminalRef.current.getBoundingClientRect();
+        if (rect.width > 0 && rect.height > 0) {
+          fitAddonRef.current.fit();
+          const cols = xtermRef.current.cols;
+          const rows = xtermRef.current.rows;
+          setDimensions({ cols, rows });
+        }
+      }
+    };
+
+    window.addEventListener('terminal-refit-all', handleRefitAll);
+    return () => window.removeEventListener('terminal-refit-all', handleRefitAll);
+  }, []);
 
   const fit = useCallback(() => {
     if (fitAddonRef.current && xtermRef.current) {

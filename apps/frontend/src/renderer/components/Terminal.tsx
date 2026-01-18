@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback, useState, useMemo } from 'react';
+import { useEffect, useRef, useCallback, useState, useMemo, forwardRef, useImperativeHandle } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDroppable, useDndContext } from '@dnd-kit/core';
 import '@xterm/xterm/css/xterm.css';
@@ -9,6 +9,7 @@ import { useSettingsStore } from '../stores/settings-store';
 import { useToast } from '../hooks/use-toast';
 import type { TerminalProps } from './terminal/types';
 import type { TerminalWorktreeConfig } from '../../shared/types';
+import { TERMINAL_DOM_UPDATE_DELAY_MS } from '../../shared/constants';
 import { TerminalHeader } from './terminal/TerminalHeader';
 import { CreateWorktreeDialog } from './terminal/CreateWorktreeDialog';
 import { useXterm } from './terminal/useXterm';
@@ -21,7 +22,17 @@ import { useTerminalFileDrop } from './terminal/useTerminalFileDrop';
 const MIN_COLS = 10;
 const MIN_ROWS = 3;
 
-export function Terminal({
+/**
+ * Handle interface exposed by Terminal component for external control.
+ * Used by parent components (e.g., SortableTerminalWrapper) to trigger operations
+ * like refitting the terminal after container size changes.
+ */
+export interface TerminalHandle {
+  /** Refit the terminal to its container size */
+  fit: () => void;
+}
+
+export const Terminal = forwardRef<TerminalHandle, TerminalProps>(function Terminal({
   id,
   cwd,
   projectPath,
@@ -35,7 +46,7 @@ export function Terminal({
   isDragging,
   isExpanded,
   onToggleExpand,
-}: TerminalProps) {
+}, ref) {
   const { t } = useTranslation('terminal');
   const isMountedRef = useRef(true);
   const isCreatedRef = useRef(false);
@@ -105,7 +116,8 @@ export function Terminal({
   const {
     terminalRef,
     xtermRef: _xtermRef,
-    write,
+    fit,
+    write: _write,  // Output now handled by useGlobalTerminalListeners
     writeln,
     focus,
     dispose,
@@ -121,6 +133,12 @@ export function Terminal({
     },
     onDimensionsReady: handleDimensionsReady,
   });
+
+  // Expose fit method to parent components via ref
+  // This allows external triggering of terminal resize (e.g., after drag-drop reorder)
+  useImperativeHandle(ref, () => ({
+    fit,
+  }), [fit]);
 
   // Use ready dimensions for PTY creation (wait until xterm has measured)
   // This prevents creating PTY with default 80x24 when container is smaller
@@ -175,6 +193,14 @@ export function Terminal({
       focus();
     }
   }, [isActive, focus]);
+
+  // Refit terminal when expansion state changes
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      fit();
+    }, TERMINAL_DOM_UPDATE_DELAY_MS);
+    return () => clearTimeout(timeoutId);
+  }, [isExpanded, fit]);
 
   // Trigger deferred Claude resume when terminal becomes active
   // This ensures Claude sessions are only resumed when the user actually views the terminal,
@@ -431,4 +457,4 @@ Please confirm you're ready by saying: I'm ready to work on ${selectedTask.title
       )}
     </div>
   );
-}
+});
